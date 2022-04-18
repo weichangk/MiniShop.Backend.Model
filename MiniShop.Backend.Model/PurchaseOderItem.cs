@@ -16,19 +16,33 @@ namespace MiniShop.Backend.Model
         public int PurchaseOderId { get; set; }
 
         /// <summary>
-        /// 采购订单
-        /// </summary>
-        public virtual PurchaseOder PurchaseOder { get; set; } = new PurchaseOder();
-
-        /// <summary>
         /// 商品ID
         /// </summary>
         public int ItemId { get; set; }
 
         /// <summary>
-        /// 商品
+        /// 货号
         /// </summary>
-        public virtual Item Item { get; set; } = new Item();
+        /// <value></value>
+        public string ItemCode { get; set; }
+
+        /// <summary>
+        /// 品名
+        /// </summary>
+        /// <value></value>
+        public string ItemName { get; set; }
+
+        /// <summary>
+        /// 单位
+        /// </summary>
+        /// <value></value>
+        public string UnitName { get; set; }
+
+        /// <summary>
+        /// 进货价
+        /// </summary>
+        /// <value></value>
+        public decimal PurchasePrice { get; set; }
 
         /// <summary>
         /// 数量
@@ -48,7 +62,7 @@ namespace MiniShop.Backend.Model
         /// <summary>
         /// 实际进货价
         /// </summary>
-        public decimal PurchasePrice { get; set; }
+        public decimal RealPurchasePrice { get; set; }
 
     }
 }

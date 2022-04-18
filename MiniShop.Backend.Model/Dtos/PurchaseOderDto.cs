@@ -14,8 +14,8 @@ namespace MiniShop.Backend.Model.Dto
         [Display(Name = "单号")]
         public string OderNo { get; set; }
 
-        [Display(Name = "门店")]
-        public string StoreName { get; set; }
+        [Display(Name = "供应商ID")]
+        public int SupplierId { get; set; }
 
         [Display(Name = "供应商")]
         public string SupplierName { get; set; }
@@ -49,8 +49,5 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "备注")]
         public string Remark { get; set; }
-
-        [Display(Name = "采购订单商品列表信息")]
-        public List<PurchaseOderItemDto> PurchaseOderItemDtos { get; set; } = new List<PurchaseOderItemDto>();
     }
 }

@@ -1,6 +1,5 @@
 ﻿using MiniShop.Backend.Model.Enums;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MiniShop.Backend.Model
@@ -19,16 +18,6 @@ namespace MiniShop.Backend.Model
         public string OderNo { get; set; }
 
         /// <summary>
-        /// 门店ID
-        /// </summary>
-        public new int StoreId { get; set; }
-
-        /// <summary>
-        /// 门店
-        /// </summary>
-        public virtual Store Store { get; set; } = new Store();
-
-        /// <summary>
         /// 供应商ID
         /// </summary>
         public int SupplierId { get; set; }
@@ -36,12 +25,7 @@ namespace MiniShop.Backend.Model
         /// <summary>
         /// 供应商
         /// </summary>
-        public virtual Supplier Supplier { get; set; } = new Supplier();
-
-        /// <summary>
-        /// 采购订单商品列表信息
-        /// </summary>
-        public virtual ICollection<PurchaseOderItem> PurchaseOderItems { get; set; } = new List<PurchaseOderItem>();
+        public string SupplierName { get; set; }
 
         /// <summary>
         /// 单据金额

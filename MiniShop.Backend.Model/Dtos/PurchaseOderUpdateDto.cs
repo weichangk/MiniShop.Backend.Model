@@ -1,5 +1,4 @@
 ﻿using MiniShop.Backend.Model.Enums;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MiniShop.Backend.Model.Dto
@@ -14,6 +13,10 @@ namespace MiniShop.Backend.Model.Dto
         [Required(ErrorMessage = "{0},不能为空")]
         public int SupplierId { get; set; }
 
+        [Display(Name = "供应商")]
+        [Required(ErrorMessage = "{0},不能为空")]
+        public string SupplierName { get; set; }
+
         [Display(Name = "审核状态")]
         public EnumAuditStatus AuditState { get; set; } = EnumAuditStatus.UnAudited;
 
@@ -22,9 +25,5 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "备注")]
         public string Remark { get; set; }
-
-        [Display(Name = "采购订单商品列表信息")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public List<PurchaseOderItemUpdateDto> PurchaseOderItemUpdateDtos { get; set; }
     }
 }

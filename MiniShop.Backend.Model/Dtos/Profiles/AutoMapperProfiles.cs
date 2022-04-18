@@ -81,12 +81,7 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<PurchaseOderDto, PurchaseOderCreateDto>();
             CreateMap<PurchaseOderDto, PurchaseOderUpdateDto>();
 
-            CreateMap<PurchaseOderItem, PurchaseOderItemDto>()
-                .ForMember(d => d.ItemId, opt => opt.MapFrom(i => i.Item.Id))
-                .ForMember(d => d.ItemCode, opt => opt.MapFrom(i => i.Item.Code))
-                .ForMember(d => d.ItemName, opt => opt.MapFrom(i => i.Item.Name))
-                .ForMember(d => d.UnitName, opt => opt.MapFrom(i => i.Item.Unit.Name))
-                .ForMember(d => d.PurchasePrice, opt => opt.MapFrom(i => i.Item.PurchasePrice));
+            CreateMap<PurchaseOderItem, PurchaseOderItemDto>();
             CreateMap<PurchaseOderItemCreateDto, PurchaseOderItem>();
             CreateMap<PurchaseOderItemUpdateDto, PurchaseOderItem>();
             CreateMap<PurchaseOderItem, PurchaseOderItemCreateDto>();

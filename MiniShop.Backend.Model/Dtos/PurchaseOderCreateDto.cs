@@ -11,13 +11,13 @@ namespace MiniShop.Backend.Model.Dto
         [Required(ErrorMessage = "{0},不能为空")]
         public string OderNo { get; set; }
 
-        [Display(Name = "门店ID")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public Guid StoreId { get; set; }
-
         [Display(Name = "供应商ID")]
         [Required(ErrorMessage = "{0},不能为空")]
         public int SupplierId { get; set; }
+
+        [Display(Name = "供应商")]
+        [Required(ErrorMessage = "{0},不能为空")]
+        public string SupplierName { get; set; }
 
         [Display(Name = "制单人员")]
         [Required(ErrorMessage = "{0},不能为空")]
@@ -34,9 +34,5 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "备注")]
         public string Remark { get; set; }
-
-        [Display(Name = "采购订单商品列表信息")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public List<PurchaseOderItemCreateDto> PurchaseOderItemCreateDtos { get; set; }
     }
 }
