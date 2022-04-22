@@ -50,7 +50,7 @@ namespace MiniShop.Backend.Model
         /// <summary>
         /// 订单状态
         /// </summary>
-        public EnumPurchaseOrderStatus OrderState { get; set; } = EnumPurchaseOrderStatus.UnReceived;
+        public EnumPurchaseOrderStatus OrderState { get; set; }
 
         /// <summary>
         /// 备注

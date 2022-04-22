@@ -7,6 +7,10 @@ namespace MiniShop.Backend.Model.Dto
 {
     public class PurchaseOderCreateDto
     {
+        [Display(Name = "商店ID")]
+        [Required(ErrorMessage = "{0},不能为空")]
+        public Guid ShopId { get; set; }
+
         [Display(Name = "单号")]
         [Required(ErrorMessage = "{0},不能为空")]
         public string OderNo { get; set; }
@@ -34,5 +38,8 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "备注")]
         public string Remark { get; set; }
+
+        [Display(Name = "订单创建成功标志")]
+        public bool OrderCreatedFlag { get; set; }
     }
 }

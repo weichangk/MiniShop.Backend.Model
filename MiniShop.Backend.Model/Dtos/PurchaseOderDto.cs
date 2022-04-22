@@ -8,6 +8,9 @@ namespace MiniShop.Backend.Model.Dto
 {
     public class PurchaseOderDto
     {
+        [Display(Name = "商店ID")]
+        public Guid ShopId { get; set; }
+
         [Display(Name = "ID")]
         public int Id { get; set; }
 

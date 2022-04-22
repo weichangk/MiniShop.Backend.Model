@@ -1,12 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MiniShop.Backend.Model.Dto
 {
     public class PurchaseOderItemCreateDto
     {
+        [Display(Name = "商店ID")]
+        [Required(ErrorMessage = "{0},不能为空")]
+        public Guid ShopId { get; set; }
+        
         [Display(Name = "商品ID")]
         [Required(ErrorMessage = "{0},不能为空")]
         public int ItemId { get; set; }
+
+        [Display(Name = "单号")]
+        [Required(ErrorMessage = "{0},不能为空")]
+        public string OderNo { get; set; }
 
         [Display(Name = "货号")]
         [Required(ErrorMessage = "{0},不能为空")]

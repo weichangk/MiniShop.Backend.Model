@@ -11,9 +11,9 @@ namespace MiniShop.Backend.Model
         public override string Name { get => base.Name; set => base.Name = value; }
 
         /// <summary>
-        /// 采购订单ID
+        /// 订单号
         /// </summary>
-        public int PurchaseOderId { get; set; }
+        public string OderNo { get; set; }
 
         /// <summary>
         /// 商品ID

@@ -1,14 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MiniShop.Backend.Model.Dto
 {
     public class PurchaseOderItemDto
     {
+        [Display(Name = "商店ID")]
+        public Guid ShopId { get; set; }
+        
         [Display(Name = "ID")]
         public int Id { get; set; }
 
-        [Display(Name = "采购订单ID")]
-        public int PurchaseOderId { get; set; }
+        [Display(Name = "单号")]
+        public string OderNo { get; set; }
 
         [Display(Name = "商品ID")]
         public int ItemId { get; set; }
