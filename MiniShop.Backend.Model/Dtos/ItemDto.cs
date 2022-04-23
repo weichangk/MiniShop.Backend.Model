@@ -10,7 +10,7 @@ namespace MiniShop.Backend.Model.Dto
         [Display(Name = "ID")]
         public int Id { get; set; }
 
-        [Display(Name = "商店ID")]
+        [Display(Name = "ShopId")]
         public Guid ShopId { get; set; }
 
         [Display(Name = "类别ID")]
@@ -42,12 +42,6 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "类型描述")]
         public string TypeDes => Type.ToDescription();
-
-        [Display(Name = "供应商ID")]
-        public int SupplierId { get; set; }
-
-        [Display(Name = "供应商名称")]
-        public string SupplierName { get; set; }
 
         [Display(Name = "计价方式")]
         public EnumPriceType PriceType { get; set; }

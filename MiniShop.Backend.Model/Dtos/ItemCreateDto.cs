@@ -6,17 +6,13 @@ namespace MiniShop.Backend.Model.Dto
 {
     public class ItemCreateDto
     {
-        [Display(Name = "商店ID")]
+        [Display(Name = "ShopId")]
         [Required(ErrorMessage = "{0},不能为空")]
         public Guid ShopId { get; set; }
 
         [Display(Name = "类别ID")]
         [Required(ErrorMessage = "{0},不能为空")]
         public int CategorieId { get; set; }
-
-        [Display(Name = "类别")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public string CategorieName { get; set; }
 
         [Display(Name = "条码")]
         [Required(ErrorMessage = "{0},不能为空")]
@@ -42,14 +38,6 @@ namespace MiniShop.Backend.Model.Dto
         [Required(ErrorMessage = "{0},不能为空")]
         public EnumItemType Type { get; set; }
 
-        [Display(Name = "供应商ID")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public int SupplierId { get; set; }
-
-        [Display(Name = "供应商名称")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public string SupplierName { get; set; }
-
         [Display(Name = "计价方式")]
         [Required(ErrorMessage = "{0},不能为空")]
         public EnumPriceType PriceType { get; set; }
@@ -57,10 +45,6 @@ namespace MiniShop.Backend.Model.Dto
         [Display(Name = "单位ID")]
         [Required(ErrorMessage = "{0},不能为空")]
         public int UnitId { get; set; }
-
-        [Display(Name = "单位名称")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public string UnitName { get; set; }
 
         [Display(Name = "图片")]
         public string Picture { get; set; }

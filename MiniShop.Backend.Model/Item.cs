@@ -46,17 +46,6 @@ namespace MiniShop.Backend.Model
         public EnumItemType Type { get; set; }
 
         /// <summary>
-        /// 供应商ID
-        /// </summary>
-        public int SupplierId { get; set; }
-
-        /// <summary>
-        /// 供应商
-        /// </summary>
-        [ForeignKey("SupplierId")]
-        public virtual Supplier Supplier { get; set; }
-
-        /// <summary>
         /// 计价方式
         /// </summary>
         public EnumPriceType PriceType { get; set; }

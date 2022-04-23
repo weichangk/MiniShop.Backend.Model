@@ -56,18 +56,11 @@ namespace MiniShop.Backend.Model.Dto.Profiles
 
             CreateMap<Item, ItemDto>()
                 .ForMember(d => d.CategorieName, opt => opt.MapFrom(i => i.Categorie.Name))
-                .ForMember(d => d.UnitName, opt => opt.MapFrom(i => i.Unit.Name))
-                .ForMember(d => d.SupplierName, opt => opt.MapFrom(i => i.Supplier.Name));
+                .ForMember(d => d.UnitName, opt => opt.MapFrom(i => i.Unit.Name));
             CreateMap<ItemCreateDto, Item>();
             CreateMap<ItemUpdateDto, Item>();
-            CreateMap<Item, ItemCreateDto>()
-                .ForMember(d => d.CategorieName, opt => opt.MapFrom(i => i.Categorie.Name))
-                .ForMember(d => d.UnitName, opt => opt.MapFrom(i => i.Unit.Name))
-                .ForMember(d => d.SupplierName, opt => opt.MapFrom(i => i.Supplier.Name));
-            CreateMap<Item, ItemUpdateDto>()
-                .ForMember(d => d.CategorieName, opt => opt.MapFrom(i => i.Categorie.Name))
-                .ForMember(d => d.UnitName, opt => opt.MapFrom(i => i.Unit.Name))
-                .ForMember(d => d.SupplierName, opt => opt.MapFrom(i => i.Supplier.Name));
+            CreateMap<Item, ItemCreateDto>();
+            CreateMap<Item, ItemUpdateDto>();
             CreateMap<ItemDto, ItemCreateDto>();
             CreateMap<ItemDto, ItemUpdateDto>();
 
