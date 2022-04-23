@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using MiniShop.Backend.Model.Enums;
 
 namespace MiniShop.Backend.Model.Dto
 {
@@ -27,5 +28,9 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "地址")]
         public string Address { get; set; }
+
+        [Display(Name = "状态")]
+        [Required(ErrorMessage = "{0},不能为空")]
+        public EnumStoreStatus State { get; set; }
     }
 }

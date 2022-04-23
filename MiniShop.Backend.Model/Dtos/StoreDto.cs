@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using MiniShop.Backend.Model.Code;
+using MiniShop.Backend.Model.Enums;
 
 namespace MiniShop.Backend.Model.Dto
 {
@@ -28,5 +30,11 @@ namespace MiniShop.Backend.Model.Dto
         
         [Display(Name = "创建时间")]
         public DateTime CreatedTime { get; set; }
+
+        [Display(Name = "状态")]
+        public EnumStoreStatus State { get; set; }
+
+        [Display(Name = "状态描述")]
+        public string StateDes => State.ToDescription();
     }
 }

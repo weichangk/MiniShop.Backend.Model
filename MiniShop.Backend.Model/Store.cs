@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using MiniShop.Backend.Model.Enums;
 
 namespace MiniShop.Backend.Model
 {
@@ -22,5 +23,10 @@ namespace MiniShop.Backend.Model
         /// 地址
         /// </summary>
         public string Address { get; set; }
+
+        /// <summary>
+        /// 状态
+        /// </summary>
+        public EnumStoreStatus State { get; set; }
     }
 }
