@@ -24,10 +24,12 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "进货价")]
         [Required(ErrorMessage = "{0},不能为空")]
+        [Range(0.01,99999, ErrorMessage = "{0},0.01元 - 99999元")]
         public decimal PurchasePrice { get; set; }
 
         [Display(Name = "售价")]
         [Required(ErrorMessage = "{0},不能为空")]
+        [Range(0.01,99999, ErrorMessage = "{0},0.01元 - 99999元")]
         public decimal Price { get; set; }
 
         [Display(Name = "状态")]
