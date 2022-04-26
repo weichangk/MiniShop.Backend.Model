@@ -50,5 +50,8 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "图片")]
         public string Picture { get; set; }
+
+        [Display(Name = "图片 base64")]
+        public string PictureBase64 { get; set; }
     }
 }
