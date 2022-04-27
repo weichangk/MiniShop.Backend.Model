@@ -13,13 +13,13 @@ namespace MiniShop.Backend.Model.Dto
         [Required(ErrorMessage = "{0},不能为空")]
         public int CategorieId { get; set; }
 
-        [Display(Name = "条码")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public string Code { get; set; }
-
         [Display(Name = "名称")]
         [Required(ErrorMessage = "{0},不能为空")]
         public string Name { get; set; }
+        
+        [Display(Name = "条码")]
+        [Required(ErrorMessage = "{0},不能为空")]
+        public string Code { get; set; }
 
         [Display(Name = "进货价")]
         [Required(ErrorMessage = "{0},不能为空")]
@@ -28,10 +28,6 @@ namespace MiniShop.Backend.Model.Dto
         [Display(Name = "售价")]
         [Required(ErrorMessage = "{0},不能为空")]
         public decimal Price { get; set; }
-
-        [Display(Name = "状态")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public EnumItemStatus State { get; set; }
 
         [Display(Name = "类型")]
         [Required(ErrorMessage = "{0},不能为空")]
@@ -47,5 +43,8 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "图片")]
         public string Picture { get; set; }
+
+        [Display(Name = "图片 base64")]
+        public string PictureBase64 { get; set; }
     }
 }
