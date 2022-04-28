@@ -25,7 +25,8 @@ namespace MiniShop.Backend.Model
         /// <summary>
         /// 供应商
         /// </summary>
-        public string SupplierName { get; set; }
+        [ForeignKey("SupplierId")]
+        public virtual Supplier Supplier { get; set; }
 
         /// <summary>
         /// 单据金额

@@ -8,36 +8,21 @@ namespace MiniShop.Backend.Model.Dto
         [Display(Name = "商店ID")]
         [Required(ErrorMessage = "{0},不能为空")]
         public Guid ShopId { get; set; }
-        
+
         [Display(Name = "商品ID")]
         [Required(ErrorMessage = "{0},不能为空")]
         public int ItemId { get; set; }
 
-        [Display(Name = "单号")]
+        [Display(Name = "订单ID")]
         [Required(ErrorMessage = "{0},不能为空")]
-        public string OderNo { get; set; }
-
-        [Display(Name = "货号")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public string ItemCode { get; set; }
-
-        [Display(Name = "品名")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public string ItemName { get; set; }
-
-        [Display(Name = "单位")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public string UnitName { get; set; }
-
-        [Display(Name = "进货价")]
-        public decimal PurchasePrice { get; set; }
+        public int PurchaseOderId { get; set; }
 
         [Display(Name = "数量")]
         [Range(0.01,99999, ErrorMessage = "{0},在 0.01 - 99999 之间")]
         public decimal Number { get; set; }
 
         [Display(Name = "赠送数量")]
-        [Range(0.01, 999, ErrorMessage = "{0},在 0.01 - 999 之间")]
+        [Range(0, 999, ErrorMessage = "{0},在 0.01 - 999 之间")]
         public decimal GiveNumber { get; set; }
 
         [Display(Name = "小计金额")]

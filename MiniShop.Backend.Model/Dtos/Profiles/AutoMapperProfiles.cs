@@ -64,9 +64,8 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<ItemDto, ItemCreateDto>();
             CreateMap<ItemDto, ItemUpdateDto>();
 
-
-            // 目前还找不到集合里的映射处理！！！暂时在获取数据时做处理
-            CreateMap<PurchaseOder, PurchaseOderDto>();
+            CreateMap<PurchaseOder, PurchaseOderDto>()
+                .ForMember(d => d.SupplierName, opt => opt.MapFrom(i => i.Supplier.Name));
             CreateMap<PurchaseOderCreateDto, PurchaseOder>();
             CreateMap<PurchaseOderUpdateDto, PurchaseOder>();
             CreateMap<PurchaseOder, PurchaseOderCreateDto>();
@@ -74,7 +73,11 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<PurchaseOderDto, PurchaseOderCreateDto>();
             CreateMap<PurchaseOderDto, PurchaseOderUpdateDto>();
 
-            CreateMap<PurchaseOderItem, PurchaseOderItemDto>();
+            CreateMap<PurchaseOderItem, PurchaseOderItemDto>()
+                .ForMember(d => d.ItemCode, opt => opt.MapFrom(i => i.Item.Code))
+                .ForMember(d => d.ItemName, opt => opt.MapFrom(i => i.Item.Name))
+                .ForMember(d => d.UnitName, opt => opt.MapFrom(i => i.Item.Unit.Name))
+                .ForMember(d => d.PurchasePrice, opt => opt.MapFrom(i => i.Item.PurchasePrice));
             CreateMap<PurchaseOderItemCreateDto, PurchaseOderItem>();
             CreateMap<PurchaseOderItemUpdateDto, PurchaseOderItem>();
             CreateMap<PurchaseOderItem, PurchaseOderItemCreateDto>();

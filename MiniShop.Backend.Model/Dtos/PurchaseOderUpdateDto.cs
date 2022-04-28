@@ -18,10 +18,6 @@ namespace MiniShop.Backend.Model.Dto
         [Required(ErrorMessage = "{0},不能为空")]
         public int SupplierId { get; set; }
 
-        [Display(Name = "供应商")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public string SupplierName { get; set; }
-
         [Display(Name = "审核状态")]
         public EnumAuditStatus AuditState { get; set; }
 
