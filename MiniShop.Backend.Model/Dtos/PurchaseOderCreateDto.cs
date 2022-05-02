@@ -18,6 +18,10 @@ namespace MiniShop.Backend.Model.Dto
         [Required(ErrorMessage = "{0},不能为空")]
         public string OderNo { get; set; }
 
+        [Display(Name = "单据金额")]
+        [Required(ErrorMessage = "{0},不能为空")]
+        public decimal OderAmount { get; set; }
+
         [Display(Name = "供应商ID")]
         [Required(ErrorMessage = "{0},不能为空")]
         public int SupplierId { get; set; }
