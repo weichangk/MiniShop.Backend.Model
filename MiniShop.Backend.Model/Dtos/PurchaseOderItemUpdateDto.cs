@@ -22,7 +22,7 @@ namespace MiniShop.Backend.Model.Dto
         public decimal Number { get; set; }
 
         [Display(Name = "赠送数量")]
-        [Range(0.01, 999, ErrorMessage = "{0},在 0.01 - 999 之间")]
+        [Range(0, 999, ErrorMessage = "{0},在 0.01 - 999 之间")]
         public decimal GiveNumber { get; set; }
 
         [Display(Name = "小计金额")]
