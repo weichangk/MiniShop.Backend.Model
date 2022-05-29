@@ -14,19 +14,14 @@ namespace MiniShop.Backend.Model
         public override string Name { get => base.Name; set => base.Name = value; }
 
         /// <summary>
-        /// 订单号
+        /// 收货订单号
         /// </summary>
         public string OderNo { get; set; }
 
         /// <summary>
-        /// 门店ID
+        /// 采购订单号
         /// </summary>
-        public new int StoreId { get; set; }
-
-        /// <summary>
-        /// 门店
-        /// </summary>
-        public virtual Store Store { get; set; } = new Store();
+        public string PurchaseOderNo { get; set; }
 
         /// <summary>
         /// 供应商ID
@@ -36,12 +31,8 @@ namespace MiniShop.Backend.Model
         /// <summary>
         /// 供应商
         /// </summary>
-        public virtual Supplier Supplier { get; set; } = new Supplier();
-
-        /// <summary>
-        /// 采购收货订单商品列表信息
-        /// </summary>
-        public virtual ICollection<PurchaseReceiveOderItem> PurchaseReceiveOderItem { get; set; } = new List<PurchaseReceiveOderItem>();
+        [ForeignKey("SupplierId")]
+        public virtual Supplier Supplier { get; set; }
 
         /// <summary>
         /// 单据金额

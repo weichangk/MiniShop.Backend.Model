@@ -18,7 +18,8 @@ namespace MiniShop.Backend.Model
         /// <summary>
         /// 采购收货订单
         /// </summary>
-        public virtual PurchaseReceiveOder PurchaseReceiveOder { get; set; } = new PurchaseReceiveOder();
+        [ForeignKey("PurchaseReceiveOderId")]
+        public virtual PurchaseReceiveOder PurchaseReceiveOder { get; set; }
 
         /// <summary>
         /// 商品ID
@@ -28,7 +29,8 @@ namespace MiniShop.Backend.Model
         /// <summary>
         /// 商品
         /// </summary>
-        public virtual Item Item { get; set; } = new Item();
+        [ForeignKey("ItemId")]
+        public virtual Item Item { get; set; }
 
         /// <summary>
         /// 数量
@@ -48,7 +50,12 @@ namespace MiniShop.Backend.Model
         /// <summary>
         /// 实际进货价
         /// </summary>
-        public decimal PurchasePrice { get; set; }
+        public decimal RealPurchasePrice { get; set; }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        public string Remark { get; set; }
 
     }
 }

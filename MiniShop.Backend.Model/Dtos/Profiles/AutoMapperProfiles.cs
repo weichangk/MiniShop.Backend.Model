@@ -7,13 +7,16 @@ namespace MiniShop.Backend.Model.Dto.Profiles
     {
         public AutoMapperProfiles()
         {
+            #region ids
             CreateMap<IdentityUser, UserDto>();
             CreateMap<UserCreateDto, IdentityUser>();
             CreateMap<IdentityUser, UserCreateDto>();
             CreateMap<UserUpdateDto, IdentityUser>();
             CreateMap<IdentityUser, UserUpdateDto>();
             CreateMap<UserDto, UserUpdateDto>();
+            #endregion
 
+            #region shop
             CreateMap<Shop, ShopDto>();
             CreateMap<ShopCreateDto, Shop>();
             CreateMap<ShopUpdateDto, Shop>();
@@ -21,7 +24,9 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<Shop, ShopUpdateDto>();
             CreateMap<ShopDto, ShopCreateDto>();
             CreateMap<ShopDto, ShopUpdateDto>();
+            #endregion
 
+            #region store
             CreateMap<Store, StoreDto>();
             CreateMap<StoreCreateDto, Store>();
             CreateMap<StoreUpdateDto, Store>();
@@ -29,7 +34,9 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<Store, StoreUpdateDto>();
             CreateMap<StoreDto, StoreCreateDto>();
             CreateMap<StoreDto, StoreUpdateDto>();
+            #endregion
 
+            #region categorie
             CreateMap<Categorie, CategorieDto>();
             CreateMap<CategorieCreateDto, Categorie>();
             CreateMap<CategorieUpdateDto, Categorie>();
@@ -37,7 +44,9 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<Categorie, CategorieUpdateDto>();
             CreateMap<CategorieDto, CategorieCreateDto>();
             CreateMap<CategorieDto, CategorieUpdateDto>();
+            #endregion
 
+            #region unit
             CreateMap<Unit, UnitDto>();
             CreateMap<UnitCreateDto, Unit>();
             CreateMap<UnitUpdateDto, Unit>();
@@ -45,7 +54,9 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<Unit, UnitUpdateDto>();
             CreateMap<UnitDto, UnitCreateDto>();
             CreateMap<UnitDto, UnitUpdateDto>();
+            #endregion
 
+            #region supplier
             CreateMap<Supplier, SupplierDto>();
             CreateMap<SupplierCreateDto, Supplier>();
             CreateMap<SupplierUpdateDto, Supplier>();
@@ -53,7 +64,9 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<Supplier, SupplierUpdateDto>();
             CreateMap<SupplierDto, SupplierCreateDto>();
             CreateMap<SupplierDto, SupplierUpdateDto>();
+            #endregion
 
+            #region item
             CreateMap<Item, ItemDto>()
                 .ForMember(d => d.CategorieName, opt => opt.MapFrom(i => i.Categorie.Name))
                 .ForMember(d => d.UnitName, opt => opt.MapFrom(i => i.Unit.Name));
@@ -63,7 +76,9 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<Item, ItemUpdateDto>();
             CreateMap<ItemDto, ItemCreateDto>();
             CreateMap<ItemDto, ItemUpdateDto>();
+            #endregion
 
+            #region purchaseoder
             CreateMap<PurchaseOder, PurchaseOderDto>()
                 .ForMember(d => d.SupplierName, opt => opt.MapFrom(i => i.Supplier.Name));
             CreateMap<PurchaseOderCreateDto, PurchaseOder>();
@@ -89,7 +104,30 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<PurchaseOderItem, PurchaseOderItemUpdateDto>();
             CreateMap<PurchaseOderItemDto, PurchaseOderItemCreateDto>();
             CreateMap<PurchaseOderItemDto, PurchaseOderItemUpdateDto>();
+            #endregion
 
+            #region purchasereceiveoder
+            CreateMap<PurchaseReceiveOder, PurchaseReceiveOderDto>()
+                .ForMember(d => d.SupplierName, opt => opt.MapFrom(i => i.Supplier.Name));
+            CreateMap<PurchaseReceiveOderCreateDto, PurchaseReceiveOder>();
+            CreateMap<PurchaseReceiveOderUpdateDto, PurchaseReceiveOder>();
+            CreateMap<PurchaseReceiveOder, PurchaseReceiveOderCreateDto>();
+            CreateMap<PurchaseReceiveOder, PurchaseReceiveOderUpdateDto>();
+            CreateMap<PurchaseReceiveOderDto, PurchaseReceiveOderCreateDto>();
+            CreateMap<PurchaseReceiveOderDto, PurchaseReceiveOderUpdateDto>();
+
+            CreateMap<PurchaseReceiveOderItem, PurchaseReceiveOderItemDto>()
+                .ForMember(d => d.ItemCode, opt => opt.MapFrom(i => i.Item.Code))
+                .ForMember(d => d.ItemName, opt => opt.MapFrom(i => i.Item.Name))
+                .ForMember(d => d.UnitName, opt => opt.MapFrom(i => i.Item.Unit.Name))
+                .ForMember(d => d.PurchasePrice, opt => opt.MapFrom(i => i.Item.PurchasePrice));
+            CreateMap<PurchaseReceiveOderItemCreateDto, PurchaseReceiveOderItem>();
+            CreateMap<PurchaseReceiveOderItemUpdateDto, PurchaseReceiveOderItem>();
+            CreateMap<PurchaseReceiveOderItem, PurchaseReceiveOderItemCreateDto>();
+            CreateMap<PurchaseReceiveOderItem, PurchaseReceiveOderItemUpdateDto>();
+            CreateMap<PurchaseReceiveOderItemDto, PurchaseReceiveOderItemCreateDto>();
+            CreateMap<PurchaseReceiveOderItemDto, PurchaseReceiveOderItemUpdateDto>();
+            #endregion
         }
     }
 }
