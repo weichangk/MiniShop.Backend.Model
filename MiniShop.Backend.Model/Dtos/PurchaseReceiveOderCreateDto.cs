@@ -10,6 +10,10 @@ namespace MiniShop.Backend.Model.Dto
         [Display(Name = "ID")]
         public int Id { get; set; }
 
+        [Display(Name = "采购订单号ID")]
+        [Required(ErrorMessage = "{0},不能为空")]
+        public int PurchaseOderId { get; set; }
+
         [Display(Name = "商店ID")]
         [Required(ErrorMessage = "{0},不能为空")]
         public Guid ShopId { get; set; }

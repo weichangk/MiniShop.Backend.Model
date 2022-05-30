@@ -5,7 +5,7 @@ namespace MiniShop.Backend.Model
     /// <summary>
     /// 采购收货订单商品信息
     /// </summary>
-    public class PurchaseReceiveOderItem : EntityBaseNoDeleted<int>
+    public class PurchaseReceiveOderItem : EntityBaseNoDeletedStoreId<int>
     {
         [NotMapped]
         public override string Name { get => base.Name; set => base.Name = value; }
