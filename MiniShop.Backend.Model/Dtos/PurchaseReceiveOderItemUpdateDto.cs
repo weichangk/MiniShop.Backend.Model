@@ -9,6 +9,10 @@ namespace MiniShop.Backend.Model.Dto
         [Required(ErrorMessage = "{0},不能为空")]
         public int Id { get; set; }
  
+        [Display(Name = "商品ID")]
+        [Required(ErrorMessage = "{0},不能为空")]
+        public int ItemId { get; set; }
+
         [Display(Name = "数量")]
         [Range(0.01,99999, ErrorMessage = "{0},在 0.01 - 99999 之间")]
         public decimal Number { get; set; }
