@@ -5,7 +5,7 @@ namespace MiniShop.Backend.Model
     /// <summary>
     /// 采购订单商品信息
     /// </summary>
-    public class PurchaseReturnOderItem : EntityBaseNoDeleted<int>
+    public class PurchaseReturnOderItem : EntityBaseNoDeletedStoreId<int>
     {
         [NotMapped]
         public override string Name { get => base.Name; set => base.Name = value; }
@@ -18,7 +18,8 @@ namespace MiniShop.Backend.Model
         /// <summary>
         /// 采购退货订单
         /// </summary>
-        public virtual PurchaseReturnOder PurchaseReturnOder { get; set; } = new PurchaseReturnOder();
+        [ForeignKey("PurchaseReturnOderId")]
+        public virtual PurchaseReturnOder PurchaseReturnOder { get; set; }
 
         /// <summary>
         /// 商品ID
@@ -28,7 +29,8 @@ namespace MiniShop.Backend.Model
         /// <summary>
         /// 商品
         /// </summary>
-        public virtual Item Item { get; set; } = new Item();
+        [ForeignKey("ItemId")]
+        public virtual Item Item { get; set; }
 
         /// <summary>
         /// 数量
@@ -48,7 +50,11 @@ namespace MiniShop.Backend.Model
         /// <summary>
         /// 实际进货价
         /// </summary>
-        public decimal PurchasePrice { get; set; }
+        public decimal RealPurchasePrice { get; set; }
 
+        /// <summary>
+        /// 备注
+        /// </summary>
+        public string Remark { get; set; }
     }
 }

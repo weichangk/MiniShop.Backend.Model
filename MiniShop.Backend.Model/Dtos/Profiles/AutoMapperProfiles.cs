@@ -128,6 +128,29 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<PurchaseReceiveOderItemDto, PurchaseReceiveOderItemCreateDto>();
             CreateMap<PurchaseReceiveOderItemDto, PurchaseReceiveOderItemUpdateDto>();
             #endregion
+
+            #region purchasereturnoder
+            CreateMap<PurchaseReturnOder, PurchaseReturnOderDto>()
+                .ForMember(d => d.SupplierName, opt => opt.MapFrom(i => i.Supplier.Name));
+            CreateMap<PurchaseReturnOderCreateDto, PurchaseReturnOder>();
+            CreateMap<PurchaseReturnOderUpdateDto, PurchaseReturnOder>();
+            CreateMap<PurchaseReturnOder, PurchaseReturnOderCreateDto>();
+            CreateMap<PurchaseReturnOder, PurchaseReturnOderUpdateDto>();
+            CreateMap<PurchaseReturnOderDto, PurchaseReturnOderCreateDto>();
+            CreateMap<PurchaseReturnOderDto, PurchaseReturnOderUpdateDto>();
+
+            CreateMap<PurchaseReturnOderItem, PurchaseReturnOderItemDto>()
+                .ForMember(d => d.ItemCode, opt => opt.MapFrom(i => i.Item.Code))
+                .ForMember(d => d.ItemName, opt => opt.MapFrom(i => i.Item.Name))
+                .ForMember(d => d.UnitName, opt => opt.MapFrom(i => i.Item.Unit.Name))
+                .ForMember(d => d.PurchasePrice, opt => opt.MapFrom(i => i.Item.PurchasePrice));
+            CreateMap<PurchaseReturnOderItemCreateDto, PurchaseReturnOderItem>();
+            CreateMap<PurchaseReturnOderItemUpdateDto, PurchaseReturnOderItem>();
+            CreateMap<PurchaseReturnOderItem, PurchaseReturnOderItemCreateDto>();
+            CreateMap<PurchaseReturnOderItem, PurchaseReturnOderItemUpdateDto>();
+            CreateMap<PurchaseReturnOderItemDto, PurchaseReturnOderItemCreateDto>();
+            CreateMap<PurchaseReturnOderItemDto, PurchaseReturnOderItemUpdateDto>();
+            #endregion
         }
     }
 }
