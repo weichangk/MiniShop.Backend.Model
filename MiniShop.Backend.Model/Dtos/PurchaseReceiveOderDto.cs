@@ -14,6 +14,9 @@ namespace MiniShop.Backend.Model.Dto
         [Display(Name = "ID")]
         public int Id { get; set; }
 
+        [Display(Name = "采购订单号ID")]
+        public int PurchaseOderId { get; set; }
+
         [Display(Name = "订单号")]
         public string OderNo { get; set; }
 
