@@ -22,9 +22,9 @@ namespace MiniShop.Backend.Model.Dto
         [Required(ErrorMessage = "{0},不能为空")]
         public string OderNo { get; set; }
 
-        [Display(Name = "采购收货订单号")]
+        [Display(Name = "采购订单号")]
         [Required(ErrorMessage = "{0},不能为空")]
-        public string PurchaseReceiveOderNo { get; set; }
+        public string PurchaseOderNo { get; set; }
 
         [Display(Name = "单据金额")]
         [Required(ErrorMessage = "{0},不能为空")]
@@ -45,7 +45,7 @@ namespace MiniShop.Backend.Model.Dto
         public EnumAuditStatus AuditState { get; set; } = EnumAuditStatus.UnAudited;
 
         [Display(Name = "订单状态")]
-        public EnumPurchaseOrderStatus OrderState { get; set; } = EnumPurchaseOrderStatus.UnReturned;
+        public EnumPurchaseOrderStatus OrderState { get; set; } = EnumPurchaseOrderStatus.ToAudit;
 
         [Display(Name = "备注")]
         public string Remark { get; set; }

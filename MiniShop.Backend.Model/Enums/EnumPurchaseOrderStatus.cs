@@ -23,5 +23,8 @@ namespace MiniShop.Backend.Model.Enums
         [Description("部分退货")]
         [Display(Name ="部分退货")]
         PartReturned,
+        [Description("待审核")]
+        [Display(Name ="待审核")]
+        ToAudit,
     }
 }

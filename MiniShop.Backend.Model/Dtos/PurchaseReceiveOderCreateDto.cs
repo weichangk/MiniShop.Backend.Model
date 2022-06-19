@@ -45,7 +45,7 @@ namespace MiniShop.Backend.Model.Dto
         public EnumAuditStatus AuditState { get; set; } = EnumAuditStatus.UnAudited;
 
         [Display(Name = "订单状态")]
-        public EnumPurchaseOrderStatus OrderState { get; set; } = EnumPurchaseOrderStatus.UnReceived;
+        public EnumPurchaseOrderStatus OrderState { get; set; } = EnumPurchaseOrderStatus.ToAudit;
 
         [Display(Name = "备注")]
         public string Remark { get; set; }
