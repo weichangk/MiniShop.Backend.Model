@@ -151,6 +151,21 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<PurchaseReturnOderItemDto, PurchaseReturnOderItemCreateDto>();
             CreateMap<PurchaseReturnOderItemDto, PurchaseReturnOderItemUpdateDto>();
             #endregion
+
+            #region stock
+            CreateMap<Stock, StockDto>()
+                .ForMember(d => d.ItemId, opt => opt.MapFrom(s => s.Item.Id))
+                .ForMember(d => d.ItemCode, opt => opt.MapFrom(s => s.Item.Code))
+                .ForMember(d => d.ItemName, opt => opt.MapFrom(s => s.Item.Name))
+                .ForMember(d => d.UnitName, opt => opt.MapFrom(s => s.Item.Unit.Name))
+                .ForMember(d => d.CategorieName, opt => opt.MapFrom(s => s.Item.Categorie.Name));
+            CreateMap<StockCreateDto, Stock>();
+            CreateMap<StockUpdateDto, Stock>();
+            CreateMap<Stock, StockCreateDto>();
+            CreateMap<Stock, StockUpdateDto>();
+            CreateMap<StockDto, StockCreateDto>();
+            CreateMap<StockDto, StockUpdateDto>();
+            #endregion
         }
     }
 }
