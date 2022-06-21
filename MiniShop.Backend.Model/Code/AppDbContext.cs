@@ -56,7 +56,9 @@ namespace MiniShop.Backend.Model.Code
             modelBuilder.Entity<PurchaseReturnOder>()
                 .HasIndex(m => new { m.ShopId, m.OderNo })
                 .IsUnique();
-
+            modelBuilder.Entity<Payment>()
+                .HasIndex(m => new { m.ShopId, m.Code })
+                .IsUnique();
             modelBuilder.Seed();
         }
     }
