@@ -5,7 +5,7 @@ using MiniShop.Backend.Model.Enums;
 namespace MiniShop.Backend.Model
 {
     /// <summary>
-    /// 采购收货订单商品信息
+    /// 付款方式信息
     /// </summary>
     public class Payment : EntityBaseNoDeletedStoreId<int>
     {

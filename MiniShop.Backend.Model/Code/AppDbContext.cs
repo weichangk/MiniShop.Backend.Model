@@ -59,6 +59,9 @@ namespace MiniShop.Backend.Model.Code
             modelBuilder.Entity<Payment>()
                 .HasIndex(m => new { m.ShopId, m.Code })
                 .IsUnique();
+            modelBuilder.Entity<PosRegister>()
+                .HasIndex(m => new { m.Code })
+                .IsUnique();
             modelBuilder.Seed();
         }
     }
