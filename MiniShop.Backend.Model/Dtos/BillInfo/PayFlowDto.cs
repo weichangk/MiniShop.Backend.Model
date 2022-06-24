@@ -13,6 +13,9 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "单号")]
         public string BillNo { get; set; }
+
+        [Display(Name = "创建时间")]
+        public DateTime CreatedTime { get; set; }
         
         [Display(Name = "付款ID")]
         public int PaymentId { get; set; }

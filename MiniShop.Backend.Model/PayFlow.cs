@@ -12,9 +12,6 @@ namespace MiniShop.Backend.Model
         public override string Name { get => base.Name; set => base.Name = value; }
 
         [NotMapped]
-        public override DateTime CreatedTime { get; set; } = DateTime.Now;
-
-        [NotMapped]
         public override DateTime ModifiedTime { get; set; } = DateTime.Now;
 
         [NotMapped]

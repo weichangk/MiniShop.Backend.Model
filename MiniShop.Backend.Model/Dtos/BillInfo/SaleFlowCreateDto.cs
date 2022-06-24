@@ -30,5 +30,8 @@ namespace MiniShop.Backend.Model.Dto
         [Display(Name = "销售金额")]
         [Required(ErrorMessage = "{0},不能为空")]
         public decimal SaleMoney { get; set; }
+
+        [Display(Name = "创建时间")]
+        public DateTime CreatedTime { get; set; }
     }
 }

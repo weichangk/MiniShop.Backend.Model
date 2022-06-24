@@ -48,11 +48,11 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "销售金额")]
         public decimal SaleMoney { get; set; }
-        
-        //附加 BillInfo
+
         [Display(Name = "创建时间")]
         public DateTime CreatedTime { get; set; }
 
+        //附加 BillInfo
         [Display(Name = "操作员")]
         public virtual string OperatorName { get; set; }
 
