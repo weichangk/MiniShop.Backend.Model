@@ -1,9 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using MiniShop.Backend.Model.Code;
+using MiniShop.Backend.Model.Enums;
 
 namespace MiniShop.Backend.Model.Dto
 {
-    public class PayFlowDto
+    public class PayFlowBillInfoDto
     {
         [Display(Name = "ID")]
         public int Id { get; set; }
@@ -25,5 +27,24 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "付款金额")]
         public decimal PayMoney { get; set; }
+
+        //附加 BillInfo
+        [Display(Name = "创建时间")]
+        public DateTime CreatedTime { get; set; }
+
+        [Display(Name = "操作员")]
+        public virtual string OperatorName { get; set; }
+
+        [Display(Name = "销售方式")]
+        public EnumSaleWay SaleWay { get; set; }    
+
+        [Display(Name = "销售方式描述")]
+        public string SaleWayDes => SaleWay.ToDescription();
+
+        [Display(Name = "销售金额")]
+        public decimal SaleMoney { get; set; }
+
+        [Display(Name = "会员ID")]
+        public int MemberId { get; set; }
     }
 }

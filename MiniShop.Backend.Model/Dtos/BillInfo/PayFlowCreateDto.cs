@@ -9,6 +9,10 @@ namespace MiniShop.Backend.Model.Dto
         [Required(ErrorMessage = "{0},不能为空")]
         public Guid ShopId { get; set; }
 
+        [Display(Name = "单号")]
+        [Required(ErrorMessage = "{0},不能为空")]
+        public string BillNo { get; set; }
+        
         [Display(Name = "付款ID")]
         [Required(ErrorMessage = "{0},不能为空")]
         public int PaymentId { get; set; }

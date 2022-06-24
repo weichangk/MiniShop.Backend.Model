@@ -5,7 +5,7 @@ using MiniShop.Backend.Model.Enums;
 
 namespace MiniShop.Backend.Model.Dto
 {
-    public class SaleFlowDto
+    public class SaleFlowBillInfoDto
     {
         [Display(Name = "ID")]
         public int Id { get; set; }
@@ -48,5 +48,18 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "销售金额")]
         public decimal SaleMoney { get; set; }
+        
+        //附加 BillInfo
+        [Display(Name = "创建时间")]
+        public DateTime CreatedTime { get; set; }
+
+        [Display(Name = "操作员")]
+        public virtual string OperatorName { get; set; }
+
+        [Display(Name = "销售方式")]
+        public EnumSaleWay SaleWay { get; set; }    
+
+        [Display(Name = "销售方式描述")]
+        public string SaleWayDes => SaleWay.ToDescription();
     }
 }

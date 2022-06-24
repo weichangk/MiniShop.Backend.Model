@@ -194,11 +194,13 @@ namespace MiniShop.Backend.Model.Dto.Profiles
 
             #region PayFlow
             CreateMap<PayFlow, PayFlowDto>();
+            CreateMap<PayFlow, PayFlowBillInfoDto>();
             CreateMap<PayFlowCreateDto, PayFlow>();
             #endregion
 
             #region SaleFlow
             CreateMap<SaleFlow, SaleFlowDto>();
+            CreateMap<SaleFlow, SaleFlowBillInfoDto>();
             CreateMap<SaleFlowCreateDto, SaleFlow>();
             #endregion
         }

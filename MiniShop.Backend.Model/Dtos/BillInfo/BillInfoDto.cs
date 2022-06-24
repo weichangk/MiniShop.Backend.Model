@@ -31,9 +31,6 @@ namespace MiniShop.Backend.Model.Dto
         [Display(Name = "销售金额")]
         public decimal SaleMoney { get; set; }
 
-        [Display(Name = "付款金额")]
-        public decimal PayMoney { get; set; }
-
         [Display(Name = "会员ID")]
         public int MemberId { get; set; }
     }

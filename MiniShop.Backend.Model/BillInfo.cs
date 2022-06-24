@@ -30,12 +30,6 @@ namespace MiniShop.Backend.Model
         public decimal SaleMoney { get; set; }
 
         /// <summary>
-        /// 付款金额
-        /// </summary>
-        /// <value></value>
-        public decimal PayMoney { get; set; }
-
-        /// <summary>
         /// 会员ID
         /// </summary>
         /// <value></value>

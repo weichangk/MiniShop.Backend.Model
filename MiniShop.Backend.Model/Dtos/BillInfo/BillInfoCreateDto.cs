@@ -29,10 +29,6 @@ namespace MiniShop.Backend.Model.Dto
         [Required(ErrorMessage = "{0},不能为空")]
         public decimal SaleMoney { get; set; }
 
-        [Display(Name = "付款金额")]
-        [Required(ErrorMessage = "{0},不能为空")]
-        public decimal PayMoney { get; set; }
-
         [Display(Name = "会员ID")]
         public int MemberId { get; set; }
     }
