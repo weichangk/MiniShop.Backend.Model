@@ -186,6 +186,21 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<PosRegisterDto, PosRegisterCreateDto>();
             CreateMap<PosRegisterDto, PosRegisterUpdateDto>();
             #endregion
+
+            #region BillInfo
+            CreateMap<BillInfo, BillInfoDto>();
+            CreateMap<BillInfoCreateDto, BillInfo>();
+            #endregion
+
+            #region PayFlow
+            CreateMap<PayFlow, PayFlowDto>();
+            CreateMap<PayFlowCreateDto, PayFlow>();
+            #endregion
+
+            #region SaleFlow
+            CreateMap<SaleFlow, SaleFlowDto>();
+            CreateMap<SaleFlowCreateDto, SaleFlow>();
+            #endregion
         }
     }
 }
