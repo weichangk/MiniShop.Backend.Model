@@ -203,6 +203,16 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<SaleFlow, SaleFlowBillInfoDto>();
             CreateMap<SaleFlowCreateDto, SaleFlow>();
             #endregion
+
+            #region VipType
+            CreateMap<VipType, VipTypeDto>();
+            CreateMap<VipTypeCreateDto, VipType>();
+            CreateMap<VipTypeUpdateDto, VipType>();
+            CreateMap<VipType, VipTypeCreateDto>();
+            CreateMap<VipType, VipTypeUpdateDto>();
+            CreateMap<VipTypeDto, VipTypeCreateDto>();
+            CreateMap<VipTypeDto, VipTypeUpdateDto>();
+            #endregion
         }
     }
 }

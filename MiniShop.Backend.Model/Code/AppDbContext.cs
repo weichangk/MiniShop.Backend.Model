@@ -65,6 +65,9 @@ namespace MiniShop.Backend.Model.Code
             modelBuilder.Entity<BillInfo>()
                 .HasIndex(m => new { m.ShopId, m.BillNo })
                 .IsUnique();
+            modelBuilder.Entity<VipType>()
+                .HasIndex(m => new { m.ShopId, m.Code })
+                .IsUnique();
             modelBuilder.Seed();
         }
     }
