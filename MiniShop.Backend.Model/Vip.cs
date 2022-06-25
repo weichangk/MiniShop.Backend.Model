@@ -1,6 +1,7 @@
 ﻿using MiniShop.Backend.Model.Code;
 using MiniShop.Backend.Model.Enums;
 using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MiniShop.Backend.Model
@@ -12,15 +13,15 @@ namespace MiniShop.Backend.Model
     public class Vip : EntityBaseNoStoreId<int>
     {
         /// <summary>
-        /// 会员类型
+        /// 会员类型ID
         /// </summary>
-        public EnumVipType VipType { get; set; }
+        public int VipTypeId { get; set; }
 
         /// <summary>
-        /// 会员类型描述
+        /// 会员类型
         /// </summary>
-        [NotMapped]
-        public string VipTypeDes => VipType.ToDescription();
+        [ForeignKey("VipTypeId")]
+        public virtual VipType VipType { get; set; }
 
         /// <summary>
         /// 卡号
@@ -31,12 +32,6 @@ namespace MiniShop.Backend.Model
         /// 性别
         /// </summary>
         public EnumSex Sex { get; set; }
-
-        /// <summary>
-        /// 性别描述
-        /// </summary>
-        [NotMapped]
-        public string SexDes => Sex.ToDescription();
 
         /// <summary>
         /// 生日
@@ -64,9 +59,24 @@ namespace MiniShop.Backend.Model
         public EnumVipStatus State { get; set; }
 
         /// <summary>
-        /// 状态描述
+        /// 积分
         /// </summary>
-        [NotMapped]
-        public string StateDes => State.ToDescription();
+        /// <value></value>
+        [DefaultValue(0)]
+        public decimal ScoreAmount { get; set; }
+
+        /// <summary>
+        /// 消费金额
+        /// </summary>
+        /// <value></value>
+        [DefaultValue(0)]
+        public decimal ConsumeAmount { get; set; }
+
+        /// <summary>
+        /// 储值金额
+        /// </summary>
+        /// <value></value>
+        [DefaultValue(0)]
+        public decimal StoreAmount { get; set; }
     }
 }
