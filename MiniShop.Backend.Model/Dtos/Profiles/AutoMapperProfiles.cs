@@ -213,6 +213,16 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<VipTypeDto, VipTypeCreateDto>();
             CreateMap<VipTypeDto, VipTypeUpdateDto>();
             #endregion
+
+            #region VipScoreSetting
+            CreateMap<VipScoreSetting, VipScoreSettingDto>();
+            CreateMap<VipScoreSettingCreateDto, VipScoreSetting>();
+            CreateMap<VipScoreSettingUpdateDto, VipScoreSetting>();
+            CreateMap<VipScoreSetting, VipScoreSettingCreateDto>();
+            CreateMap<VipScoreSetting, VipScoreSettingUpdateDto>();
+            CreateMap<VipScoreSettingDto, VipScoreSettingCreateDto>();
+            CreateMap<VipScoreSettingDto, VipScoreSettingUpdateDto>();
+            #endregion
         }
     }
 }
