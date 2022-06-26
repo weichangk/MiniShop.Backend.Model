@@ -18,18 +18,8 @@ namespace MiniShop.Backend.Model.Dto
         [Display(Name = "姓名")]
         public string Name { get; set; }
 
-        [Display(Name = "性别")]
-        public EnumSex Sex { get; set; }
-
-        [Display(Name = "生日")]
-        public DateTime Birthday { get; set; } = DateTime.Now;
-
         [Display(Name = "手机号")]
-        [Required(ErrorMessage = "{0},不能为空")]
         public string Phone { get; set; }
-
-        [Display(Name = "有效期")]
-        public DateTime ValidDate { get; set; } = DateTime.Now;
 
         [Display(Name = "状态")]
         public EnumVipStatus State { get; set; }

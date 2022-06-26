@@ -27,14 +27,20 @@ namespace MiniShop.Backend.Model.Dto
         public EnumSex Sex { get; set; }
 
         [Display(Name = "生日")]
-        public DateTime Birthday { get; set; } = DateTime.Now;
-
-        [Display(Name = "密码")]
         [Required(ErrorMessage = "{0},不能为空")]
+        public DateTime Birthday { get; set; }
+
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "{0},不能为空")]
+        [Display(Name = "密码")]
         public string Password { get; set; }
 
+        [DataType(DataType.Password)]
+        [Display(Name = "确认密码")]
+        [Compare("Password", ErrorMessage = "密码和确认密码不匹配")]
+        public string ConfirmPassword { get; set; }
+
         [Display(Name = "手机号")]
-        [Required(ErrorMessage = "{0},不能为空")]
         public string Phone { get; set; }
 
         [Display(Name = "有效期")]
