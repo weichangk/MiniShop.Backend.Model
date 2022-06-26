@@ -7,6 +7,9 @@ namespace MiniShop.Backend.Model.Dto
 {
     public class PromotionOderCreateDto
     {
+        [Display(Name = "ID")]
+        public int Id { get; set; }
+
         [Display(Name = "商店ID")]
         [Required(ErrorMessage = "{0},不能为空")]
         public Guid ShopId { get; set; }
@@ -51,5 +54,12 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "审核状态")]
         public EnumAuditStatus AuditState { get; set; }
+
+        [Display(Name = "制单人员")]
+        [Required(ErrorMessage = "{0},不能为空")]
+        public string OperatorName { get; set; }
+
+        [Display(Name = "制单日期")]
+        public DateTime CreatedTime { get; set; } = DateTime.Now;
     }
 }

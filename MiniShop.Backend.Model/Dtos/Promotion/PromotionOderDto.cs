@@ -31,6 +31,12 @@ namespace MiniShop.Backend.Model.Dto
         [Display(Name = "促销类型")]
         public string PromotionTypeDes => PromotionType.ToDescription();
 
+        [Display(Name = "促销模式")]
+        public string PromotionModelDes => 
+                      PromotionType == EnumPromotionType.SpecialOffer 
+                      ? $"{PromotionType.ToDescription()}-{SpecialOfferWay.ToDescription()}" 
+                      : $"{PromotionType.ToDescription()}-{DiscountWay.ToDescription()}"  ;
+
         [Display(Name = "特价方式")]
         public EnumPromotionSpecialOfferWay SpecialOfferWay { get; set; }
 
@@ -78,5 +84,11 @@ namespace MiniShop.Backend.Model.Dto
 
         [Display(Name = "审核日期")]
         public DateTime? AuditTime { get; set; }
+
+        [Display(Name = "制单人员")]
+        public string OperatorName { get; set; }
+
+        [Display(Name = "制单日期")]
+        public DateTime CreatedTime { get; set; }
     }
 }
