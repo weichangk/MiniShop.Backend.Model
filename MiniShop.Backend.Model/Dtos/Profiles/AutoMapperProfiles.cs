@@ -233,6 +233,55 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             CreateMap<VipDto, VipCreateDto>();
             CreateMap<VipDto, VipUpdateDto>();
             #endregion
+
+            #region PromotionOder
+            CreateMap<PromotionOder, PromotionOderDto>();
+            CreateMap<PromotionOderCreateDto, PromotionOder>();
+            CreateMap<PromotionOderAuditDto, PromotionOder>();
+            CreateMap<PromotionOder, PromotionOderCreateDto>();
+            CreateMap<PromotionOder, PromotionOderAuditDto>();
+            CreateMap<PromotionOderDto, PromotionOderCreateDto>();
+            CreateMap<PromotionOderDto, PromotionOderAuditDto>();
+            #endregion
+
+            #region PromotionSpecialOfferItem
+            CreateMap<PromotionSpecialOfferItem, PromotionSpecialOfferItemDto>()
+                .ForMember(d => d.ItemCode, opt => opt.MapFrom(i => i.Item.Code))
+                .ForMember(d => d.ItemName, opt => opt.MapFrom(i => i.Item.Name))
+                .ForMember(d => d.UnitName, opt => opt.MapFrom(i => i.Item.Unit.Name))
+                .ForMember(d => d.Price, opt => opt.MapFrom(i => i.Item.Price));
+            CreateMap<PromotionSpecialOfferItemCreateDto, PromotionSpecialOfferItem>();
+            CreateMap<PromotionSpecialOfferItemUpdateDto, PromotionSpecialOfferItem>();
+            CreateMap<PromotionSpecialOfferItem, PromotionSpecialOfferItemCreateDto>();
+            CreateMap<PromotionSpecialOfferItem, PromotionSpecialOfferItemUpdateDto>();
+            CreateMap<PromotionSpecialOfferItemDto, PromotionSpecialOfferItemCreateDto>();
+            CreateMap<PromotionSpecialOfferItemDto, PromotionSpecialOfferItemUpdateDto>();
+            #endregion
+
+            #region PromotionDiscountItem
+            CreateMap<PromotionDiscountItem, PromotionDiscountItemDto>()
+                .ForMember(d => d.ItemCode, opt => opt.MapFrom(i => i.Item.Code))
+                .ForMember(d => d.ItemName, opt => opt.MapFrom(i => i.Item.Name))
+                .ForMember(d => d.UnitName, opt => opt.MapFrom(i => i.Item.Unit.Name))
+                .ForMember(d => d.Price, opt => opt.MapFrom(i => i.Item.Price));
+            CreateMap<PromotionDiscountItemCreateDto, PromotionDiscountItem>();
+            CreateMap<PromotionDiscountItemUpdateDto, PromotionDiscountItem>();
+            CreateMap<PromotionDiscountItem, PromotionDiscountItemCreateDto>();
+            CreateMap<PromotionDiscountItem, PromotionDiscountItemUpdateDto>();
+            CreateMap<PromotionDiscountItemDto, PromotionDiscountItemCreateDto>();
+            CreateMap<PromotionDiscountItemDto, PromotionDiscountItemUpdateDto>();
+            #endregion
+
+            #region PromotionDiscountCategorie
+            CreateMap<PromotionDiscountCategorie, PromotionDiscountCategorieDto>()
+                .ForMember(d => d.CategorieName, opt => opt.MapFrom(i => i.Categorie.Name));
+            CreateMap<PromotionDiscountCategorieCreateDto, PromotionDiscountCategorie>();
+            CreateMap<PromotionDiscountCategorieUpdateDto, PromotionDiscountCategorie>();
+            CreateMap<PromotionDiscountCategorie, PromotionDiscountCategorieCreateDto>();
+            CreateMap<PromotionDiscountCategorie, PromotionDiscountCategorieUpdateDto>();
+            CreateMap<PromotionDiscountCategorieDto, PromotionDiscountCategorieCreateDto>();
+            CreateMap<PromotionDiscountCategorieDto, PromotionDiscountCategorieUpdateDto>();
+            #endregion
         }
     }
 }

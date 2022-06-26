@@ -68,6 +68,9 @@ namespace MiniShop.Backend.Model.Code
             modelBuilder.Entity<VipType>()
                 .HasIndex(m => new { m.ShopId, m.Code })
                 .IsUnique();
+            modelBuilder.Entity<PromotionOder>()
+                .HasIndex(m => new { m.ShopId, m.OderNo })
+                .IsUnique();
             modelBuilder.Seed();
         }
     }
