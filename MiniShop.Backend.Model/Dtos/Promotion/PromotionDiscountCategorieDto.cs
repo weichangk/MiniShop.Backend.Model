@@ -14,6 +14,9 @@ namespace MiniShop.Backend.Model.Dto
         [Display(Name = "类别ID")]
         public int CategorieId { get; set; }
 
+        [Display(Name = "编码")]
+        public int CategorieCode { get; set; }
+
         [Display(Name = "类别")]
         public string CategorieName { get; set; }
     }

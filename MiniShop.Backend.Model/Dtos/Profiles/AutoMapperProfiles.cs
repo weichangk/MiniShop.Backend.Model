@@ -237,11 +237,11 @@ namespace MiniShop.Backend.Model.Dto.Profiles
             #region PromotionOder
             CreateMap<PromotionOder, PromotionOderDto>();
             CreateMap<PromotionOderCreateDto, PromotionOder>();
-            CreateMap<PromotionOderAuditDto, PromotionOder>();
+            CreateMap<PromotionOderUpdateDto, PromotionOder>();
             CreateMap<PromotionOder, PromotionOderCreateDto>();
-            CreateMap<PromotionOder, PromotionOderAuditDto>();
+            CreateMap<PromotionOder, PromotionOderUpdateDto>();
             CreateMap<PromotionOderDto, PromotionOderCreateDto>();
-            CreateMap<PromotionOderDto, PromotionOderAuditDto>();
+            CreateMap<PromotionOderDto, PromotionOderUpdateDto>();
             #endregion
 
             #region PromotionSpecialOfferItem
@@ -274,7 +274,8 @@ namespace MiniShop.Backend.Model.Dto.Profiles
 
             #region PromotionDiscountCategorie
             CreateMap<PromotionDiscountCategorie, PromotionDiscountCategorieDto>()
-                .ForMember(d => d.CategorieName, opt => opt.MapFrom(i => i.Categorie.Name));
+                .ForMember(d => d.CategorieName, opt => opt.MapFrom(i => i.Categorie.Name))
+                .ForMember(d => d.CategorieCode, opt => opt.MapFrom(i => i.Categorie.Code));
             CreateMap<PromotionDiscountCategorieCreateDto, PromotionDiscountCategorie>();
             CreateMap<PromotionDiscountCategorieUpdateDto, PromotionDiscountCategorie>();
             CreateMap<PromotionDiscountCategorie, PromotionDiscountCategorieCreateDto>();
