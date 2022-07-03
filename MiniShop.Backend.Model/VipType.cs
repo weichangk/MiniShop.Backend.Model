@@ -6,6 +6,7 @@ namespace MiniShop.Backend.Model
     /// <summary>
     /// 会员类别
     /// </summary>
+    [Table("VipType")]
     public class VipType : EntityBaseNoDeletedStoreId<int>
     {
         /// <summary>

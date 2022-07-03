@@ -3,8 +3,9 @@
 namespace MiniShop.Backend.Model
 {
     /// <summary>
-    /// 采购订单商品信息
+    /// 采购退货订单商品
     /// </summary>
+    [Table("PurchaseReturnOderItem")]
     public class PurchaseReturnOderItem : EntityBaseNoDeletedStoreId<int>
     {
         [NotMapped]

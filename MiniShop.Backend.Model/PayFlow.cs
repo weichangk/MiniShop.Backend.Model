@@ -4,8 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MiniShop.Backend.Model
 {
     /// <summary>
-    /// 付款流水
+    /// 支付流水
     /// </summary>
+    [Table("PayFlow")]
     public class PayFlow : EntityBaseNoDeletedStoreId<int>
     {
         [NotMapped]

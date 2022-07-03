@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>MiniShop.Backend.Model</id>
-    <version>1.0.1</version>
+    <version>1.0.5</version>
     <title>MiniShop.Backend.Model</title>
     <authors>weichangk</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

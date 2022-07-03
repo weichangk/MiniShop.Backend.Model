@@ -6,8 +6,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MiniShop.Backend.Model
 {
     /// <summary>
-    /// 采购订单
+    /// 采购退货订单
     /// </summary>
+    [Table("PurchaseReturnOder")]
     public class PurchaseReturnOder : EntityBaseNoDeletedStoreId<int>
     {
         [NotMapped]

@@ -7,6 +7,7 @@ namespace MiniShop.Backend.Model
     /// <summary>
     /// 销售订单
     /// </summary>
+    [Table("BillInfo")]
     public class BillInfo : EntityBaseNoDeletedStoreId<int>
     {
         [NotMapped]

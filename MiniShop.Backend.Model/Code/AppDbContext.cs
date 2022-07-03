@@ -32,9 +32,6 @@ namespace MiniShop.Backend.Model.Code
             modelBuilder.Entity<Store>()
                 .HasIndex(m => new { m.ShopId, m.Name })
                 .IsUnique();
-            modelBuilder.Entity<Vip>()
-                .HasIndex(m => new { m.ShopId, m.Code })
-                .IsUnique();
             modelBuilder.Entity<Item>()
                 .HasIndex(m => new { m.ShopId, m.Code })
                 .IsUnique();
@@ -50,11 +47,20 @@ namespace MiniShop.Backend.Model.Code
             modelBuilder.Entity<PurchaseOder>()
                 .HasIndex(m => new { m.ShopId, m.OderNo })
                 .IsUnique();
+            modelBuilder.Entity<PurchaseOderItem>()
+                .HasIndex(m => new { m.Id, m.ShopId })
+                .IsUnique();
             modelBuilder.Entity<PurchaseReceiveOder>()
                 .HasIndex(m => new { m.ShopId, m.OderNo })
                 .IsUnique();
+            modelBuilder.Entity<PurchaseReceiveOderItem>()
+                .HasIndex(m => new { m.Id, m.ShopId })
+                .IsUnique();
             modelBuilder.Entity<PurchaseReturnOder>()
                 .HasIndex(m => new { m.ShopId, m.OderNo })
+                .IsUnique();
+            modelBuilder.Entity<PurchaseReturnOderItem>()
+                .HasIndex(m => new { m.Id, m.ShopId })
                 .IsUnique();
             modelBuilder.Entity<Payment>()
                 .HasIndex(m => new { m.ShopId, m.Code })
@@ -65,11 +71,35 @@ namespace MiniShop.Backend.Model.Code
             modelBuilder.Entity<BillInfo>()
                 .HasIndex(m => new { m.ShopId, m.BillNo })
                 .IsUnique();
+            modelBuilder.Entity<PayFlow>()
+                .HasIndex(m => new { m.ShopId, m.BillNo })
+                .IsUnique();
+            modelBuilder.Entity<SaleFlow>()
+                .HasIndex(m => new { m.ShopId, m.BillNo })
+                .IsUnique();
+            modelBuilder.Entity<Stock>()
+                .HasIndex(m => new { m.Id, m.ShopId })
+                .IsUnique();
+            modelBuilder.Entity<Vip>()
+                .HasIndex(m => new { m.ShopId, m.Code })
+                .IsUnique();
             modelBuilder.Entity<VipType>()
                 .HasIndex(m => new { m.ShopId, m.Code })
                 .IsUnique();
+            modelBuilder.Entity<VipScoreSetting>()
+                .HasIndex(m => new { m.Id, m.ShopId })
+                .IsUnique();
             modelBuilder.Entity<PromotionOder>()
                 .HasIndex(m => new { m.ShopId, m.OderNo })
+                .IsUnique();
+            modelBuilder.Entity<PromotionDiscountCategorie>()
+                .HasIndex(m => new { m.Id, m.ShopId })
+                .IsUnique();
+            modelBuilder.Entity<PromotionDiscountItem>()
+                .HasIndex(m => new { m.Id, m.ShopId })
+                .IsUnique();
+            modelBuilder.Entity<PromotionSpecialOfferItem>()
+                .HasIndex(m => new { m.Id, m.ShopId })
                 .IsUnique();
             modelBuilder.Seed();
         }

@@ -7,6 +7,7 @@ namespace MiniShop.Backend.Model
     /// <summary>
     /// 促销订单
     /// </summary>
+    [Table("PromotionOder")]
     public class PromotionOder : EntityBaseNoDeletedStoreId<int>
     {
         /// <summary>

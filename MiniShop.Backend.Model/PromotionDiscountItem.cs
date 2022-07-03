@@ -6,6 +6,7 @@ namespace MiniShop.Backend.Model
     /// <summary>
     /// 促销折扣商品
     /// </summary>
+    [Table("PromotionDiscountItem")]
     public class PromotionDiscountItem : EntityBaseNoDeletedStoreId<int>
     {
         [NotMapped]

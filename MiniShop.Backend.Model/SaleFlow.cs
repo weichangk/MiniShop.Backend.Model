@@ -6,6 +6,7 @@ namespace MiniShop.Backend.Model
     /// <summary>
     /// 销售流水
     /// </summary>
+    [Table("SaleFlow")]
     public class SaleFlow : EntityBaseNoDeletedStoreId<int>
     {
         [NotMapped]

@@ -5,8 +5,9 @@ using MiniShop.Backend.Model.Enums;
 namespace MiniShop.Backend.Model
 {
     /// <summary>
-    /// 采购收货订单商品信息
+    /// POS登记
     /// </summary>
+    [Table("PosRegister")]
     public class PosRegister : EntityBaseNoDeletedStoreId<int>
     {
         [NotMapped]

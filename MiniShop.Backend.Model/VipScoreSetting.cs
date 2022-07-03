@@ -6,6 +6,7 @@ namespace MiniShop.Backend.Model
     /// <summary>
     /// 会员积分设置
     /// </summary>
+    [Table("VipScoreSetting")]
     public class VipScoreSetting : EntityBaseNoDeletedStoreId<int>
     {
         [NotMapped]
